@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Modules</title>
+    <style>
+        .module {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .module h2 {
+            margin-top: 0;
+        }
+        .module a {
+            text-decoration: none;
+            color: #007BFF;
+        }
+        .module a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Modules</h1>
+    <div class="module">
+        <h2>Schedules</h2>
+        <p><a href="{% url 'schedules' %}">View Schedules</a></p>
+    </div>
+    <div class="module">
+        <h2>Teams</h2>
+        <p><a href="{% url 'manage_teams' %}">View Teams</a></p>
+    </div>
+    <div class="module">
+        <h2>Players</h2>
+        <p><a href="{% url 'admin_dashboard' %}">View Players</a></p>
+    </div>
+    <div class="module">
+        <h2>Parents</h2>
+        <p><a href="{% url 'parents' %}">View Parents</a></p>
+    </div>
+    <div class="module">
+        <h2>coaches</h2>
+        <p><a href="{% url 'coaches' %}">View coaches</a></p>
+    </div>
+</body>
+</html>

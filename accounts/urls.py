@@ -1,0 +1,36 @@
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('', views.home, name='home'),
+    path('signup/', views.signup, name='signup'),
+    path('signupcoach/', views.signupcoach, name='signupcoach'),
+    path('login/', views.login, name='login'),
+     path('coach/login/', views.coach_login, name='coach_login'),
+    path('admin_login/', views.admin_login, name='admin_login'),
+    path('admin_dashboard/', views.admin_dashboard, name='admin_dashboard'),
+    path('delete_user/<str:email>/', views.delete_user, name='delete_user'),
+    path('update_user/<str:email>/', views.update_user, name='update_user'),
+    #  path('coaches/', views.coaches_view, name='coaches'),
+    path('coaches/update/<str:email>/', views.update_coach_by_email, name='update_coach_by_email'),
+    path('coaches/delete/<str:email>/', views.delete_coach_by_email, name='delete_coach_by_email'),
+    path('coach_dashboard/', views.coach_dashboard, name='coach_dashboard'),
+    path('player_dashboard/', views.player_dashboard, name='player_dashboard'),
+    path('signupparent/', views.signupparent, name='signupparent'),
+    path('medical_staff_dashboard/', views.medical_staff_dashboard, name='medical_staff_dashboard'),
+    path('sports_psychologist_dashboard/', views.sports_psychologist_dashboard, name='sports_psychologist_dashboard'),
+    path('analytics_expert_dashboard/', views.analytics_expert_dashboard, name='analytics_expert_dashboard'),
+    path('modules/', views.modules, name='modules'),
+    path('schedules/', views.schedules, name='schedules'),
+    path('teams/', views.teams, name='teams'),
+    path('players/', views.players, name='players'),
+    path('parents/', views.parents, name='parents'),
+    path('parents/update/<str:email>/', views.update_parent_by_email, name='update_parent_by_email'),
+    path('parents/delete/<str:email>/', views.delete_parent_by_email, name='delete_parent_by_email'),
+    path('coaches/', views.coaches, name='coaches'),
+    path('manage_team/', views.manage_team, name='manage_team'),
+    path('edit_team_by_email/<str:coach_email>/', views.edit_team_by_email, name='edit_team_by_email'),
+    path('delete_team_by_email/<str:coach_email>/', views.delete_team_by_email, name='delete_team_by_email'),
+    path('create/',views.create,name='create'),
+]
+

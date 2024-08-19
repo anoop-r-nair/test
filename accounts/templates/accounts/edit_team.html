@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Team</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style2.css' %}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="#">Sports Team Management</a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'admin_dashboard' %}">Dashboard</a></li>
+                    <li><a href="{% url 'manage_teams' %}">Manage Teams</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="form-container">
+        <h2>Edit Team</h2>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="team_name">Team Name:</label>
+                <input type="text" id="team_name" name="team_name" value="{{ team.team_name }}" required>
+            </div>
+            <div class="form-group">
+                <label for="coach_id">Assign Coach:</label>
+                <select id="coach_id" name="coach_id" required>
+                    {% for coach in coaches %}
+                        <option value="{{ coach.uid }}" {% if coach.uid == team.coach_id %}selected{% endif %}>{{ coach.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="player_ids">Assign Players:</label>
+                <select id="player_ids" name="player_ids" multiple required>
+                    {% for player in players %}
+                        <option value="{{ player.uid }}" {% if player.uid in team.players %}selected{% endif %}>{{ player.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <button type="submit">Update Team</button>
+        </form>
+    </main>
+</body>
+</html>

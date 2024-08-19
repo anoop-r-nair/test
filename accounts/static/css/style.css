@@ -1,0 +1,83 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+    background: #000; /* Change this to your desired background color */
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+header {
+    background: #000; /* Change this to your desired header color */
+    padding: 20px 0;
+}
+
+.logo a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.5em;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.auth-buttons a {
+    text-decoration: none;
+    color: #fff;
+    margin-left: 20px;
+    border: 1px solid #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.auth-buttons .signup {
+    background: #fff;
+    color: #000;
+}
+
+.main {
+    height: calc(100vh - 80px); /* Full height minus the header height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('/path/to/your/background-image.jpg') no-repeat center center/cover;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.hero .cta {
+    display: inline-block;
+    text-decoration: none;
+    color: #000;
+    background: #fff;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-size: 1.2em;
+}
+
+footer {
+    background: #000;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer p {
+    margin: 0;
+}
